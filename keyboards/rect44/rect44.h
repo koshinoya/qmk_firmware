@@ -1,0 +1,40 @@
+/* Copyright 2019 koshinoya[D[D[D[D[D[D[D[K[C[C[C[C[C[C[C[C
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#pragma once
+
+#include "quantum.h"
+
+/* This is a shortcut to help you visually see your layout.
+ *
+ * The first section contains all of the arguments representing the physical
+ * layout of the board and position of the keys.
+ *
+ * The second converts the arguments into a two-dimensional array which
+ * represents the switch matrix.
+ */
+#define LAYOUT( \
+    A00, A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12, \
+    B00, B01, B02, B03, B04, B05, B06, B07, B08, B09, B10, B11, B12, \
+    C00, C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C11, C12, \
+    D00, D01, D02, D03,      D05, D06,      D08, D09, D10, D11, D12 \
+) \
+{ \
+    { A00, A01, A02, A03, A04,   A05, A06, A07,   A08, A09, A10, A11, A12 }, \
+    { B00, B01, B02, B03, B04,   B05, B06, B07,   B08, B09, B10, B11, B12 }, \
+    { C00, C01, C02, C03, C04,   C05, C06, C07,   C08, C09, C10, C11, C12 }, \
+    { D00, D01, D02, D03, KC_NO, D05, D06, KC_NO, D08, D09, D10, D11, D12 } \
+}
