@@ -1,1 +1,1 @@
-# The default keymap for rect44
+# The ISO-UK keymap for rect44
