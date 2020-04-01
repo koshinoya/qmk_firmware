@@ -1,1 +1,1 @@
-# The default keymap for rectangle44
+# The default keymap for rect44
