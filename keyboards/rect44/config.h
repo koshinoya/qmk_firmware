@@ -1,5 +1,5 @@
 /*
-Copyright 2019 koshinoya
+Copyright 2020 koshinoya
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    koshinoya
-#define PRODUCT         rect44
+#define PRODUCT         Rect44
 #define DESCRIPTION     40 percent staggered keyboard
 
 /* key matrix size */
