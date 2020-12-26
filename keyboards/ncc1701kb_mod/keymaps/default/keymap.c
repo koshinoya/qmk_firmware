@@ -18,34 +18,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 /* LAYER 1
- * ,-----------------------.
- * |BL TOG |       | BREATH|
- * |-------+-------+-------|
- * |  BL + | BL -  |BL CYCL|
- * |-------+-------+-------|
- * | BL ON | BL OFF|       |
- * `-----------------------'
+ * ,--------------------------.
+ * |RGB TOG |RGB_MOD |  VA +  |
+ * |--------+--------+--------|
+ * |  HU +  |  SA +  |  VA -  |
+ * |--------+--------+--------|
+ * |  HU -  |  SA -  |  TRNS  |
+ * `--------------------------'
  */
 [1] = LAYOUT(
-  BL_TOGG,  KC_TRNS, BL_BRTG,
-  BL_INC, BL_DEC,   BL_STEP,
-  BL_ON,   BL_OFF,  KC_TRNS
+  RGB_TOG, RGB_MOD, RGB_VAI,
+  RGB_HUI, RGB_SAI, RGB_VAD,
+  RGB_HUD, RGB_SAD, KC_TRNS
 )
 
 };
 
 void encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) { /* First encoder */
-    if (clockwise) {
-      tap_code(KC_VOLU);
+	if (IS_LAYER_ON(1)) {
+      if (clockwise) {
+		rgblight_increase_hue_noeeprom();
+      } else {
+        rgblight_decrease_hue_noeeprom();
+      }
     } else {
-      tap_code(KC_VOLD);
-    }
-  } else if (index == 1) { /* Second encoder */  
-    if (clockwise) {
-      tap_code(KC_VOLU);
-    } else {
-      tap_code(KC_VOLD);
+      tap_code((clockwise == true) ? KC_VOLU : KC_VOLD);
     }
   }
 }
